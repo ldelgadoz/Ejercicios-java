@@ -4,6 +4,7 @@
 
 package com.mycompany.tareamathii;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 /**
@@ -53,7 +54,24 @@ public class TareaMathII {
         System.out.println( y );
         System.out.println( z );
         System.out.println( max );
- } 
+        
+        ////////////////////////////////////////////3
+        ///ENUNCIADO
+        ///Diseña una funcion que calcule el numero de euler lo que se podria hacer con un System.out.println(Math.E); lo hace asi.
+        BigDecimal e;
+        BigDecimal factor;
+        e = new BigDecimal( "1" ).setScale( 300,BigDecimal.ROUND_DOWN );
+        factor = new BigDecimal( "1" ).setScale( 300,BigDecimal.ROUND_DOWN );
+        // Se obtiene la expresión del paréntesis de la fórmula
+        factor = factor.divide( new BigDecimal( 200 ),BigDecimal.ROUND_DOWN );
+        factor = factor.add( new BigDecimal( 1 ) );
+        // Se multiplica la expresión para obtener la potencia adecuada
+        for( int i=1; i < 200; i++ )
+        e = e.multiply( factor );
+        System.out.println( e );
+        
+    } 
+    
         
     }
 
