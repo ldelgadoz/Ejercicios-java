@@ -4,6 +4,8 @@
 
 package com.mycompany.tareamathiii;
 
+import java.util.Scanner;
+
 /**
  *
  * @author DIT-MAÑANA
@@ -11,6 +13,17 @@ package com.mycompany.tareamathiii;
 public class TareaMathIII {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Scanner datos=new Scanner (System.in);
+        
+        /////////1
+        
+        double radio;
+        
+        System.out.println("Introduce el radio del circulo: ");
+        radio = datos.nextDouble();
+        double area;
+        area =(radio*radio)* (Math.PI);
+        System.out.println("Este es: "+Math.round(area));
+        
     }
 }
