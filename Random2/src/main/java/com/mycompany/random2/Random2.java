@@ -17,7 +17,7 @@ public class Random2 {
         Scanner datos=new Scanner (System.in);
         Random rand =  new Random();
         int opcion;
-        int cantidad; 
+
         
         do{
             System.out.println("---- GENERADOR CONTRASEÑAS ----");
@@ -35,13 +35,38 @@ public class Random2 {
                 String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*";
                 int ncaracteres = caracteres.length();
                 String contraseña = "";
-                
-                
+                int cantidad;
+                System.out.print("Introduce la cantidad de contraseñas que quieres generar: ");
+                cantidad = datos.nextInt();
+                System.out.println();
                 System.out.print("Introduce una longitud: ");
                 longitud = datos.nextInt();
                 System.out.println();
+                String opcion2;
+                System.out.println("Quieres elegir que caracteres incluir? s/n:");
+                opcion2 = datos.next();
+                if (opcion2.equals("s"))
+                {
+                    System.out.println("Cuantos quieres añadir?");
+                    int opcion3 = datos.nextInt();
+                    for (int i4 = 0; i4 < opcion3; i4++)
+                    {
+                        
+                        System.out.println("--- TIPOS ---");
+                        System.out.println("1- MAYUSCULAS");
+                        System.out.println("2- MINUSCULAS");
+                        System.out.println("3- NUMEROS");
+                        System.out.println("4- CARACTERES");
+                        
+                       
+                        
+                    }
+                    
+                }
                 Boolean valida = false;
                 
+                for (int i3 = 0; i3 < cantidad; i3++)
+                {    
                     do
                     {
                         contraseña = "";
@@ -88,8 +113,9 @@ public class Random2 {
 
                     }
                     while(valida == false);
-                    System.out.println("Aqui tienes tu contraseña de "+longitud);
+                    System.out.println("Aqui tienes tu contraseña de "+longitud+" digitos");
                     System.out.println(contraseña);
+                }
             }
             else if (opcion == 2)
             {
