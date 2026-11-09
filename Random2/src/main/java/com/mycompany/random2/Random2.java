@@ -32,7 +32,13 @@ public class Random2 {
             if (opcion == 1)
             {
                 int longitud;
-                String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*";
+                String caracteres = "";
+                String Mayus = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                String Minus = "abcdefghijklmnopqrstuvwxyz";
+                String Nums  = "0123456789";
+                String carc = "!@#$%&*";
+                
+                
                 int ncaracteres = caracteres.length();
                 String contraseña = "";
                 int cantidad;
@@ -47,21 +53,31 @@ public class Random2 {
                 opcion2 = datos.next();
                 if (opcion2.equals("s"))
                 {
-                    System.out.println("Cuantos quieres añadir?");
-                    int opcion3 = datos.nextInt();
-                    for (int i4 = 0; i4 < opcion3; i4++)
+                    String opcion3 = "";
+                    System.out.println("¿Quieres mayusculas s/n?: ");
+                    if (opcion3.equals("s"))
                     {
-                        
-                        System.out.println("--- TIPOS ---");
-                        System.out.println("1- MAYUSCULAS");
-                        System.out.println("2- MINUSCULAS");
-                        System.out.println("3- NUMEROS");
-                        System.out.println("4- CARACTERES");
-                        
-                       
-                        
+                        caracteres = caracteres + Mayus;
                     }
-                    
+                    System.out.println("¿Quieres minusculas s/n?: ");
+                    if (opcion3.equals("s"))
+                    {
+                        caracteres = caracteres + Minus;
+                    }
+                    System.out.println("¿Quieres numeros s/n?: ");
+                    if (opcion3.equals("s"))
+                    {
+                        caracteres = caracteres + Nums;
+                    }
+                    System.out.println("¿Quieres Caracteres especiales s/n?: ");
+                    if (opcion3.equals("s"))
+                    {
+                        caracteres = caracteres + carc;
+                    }                    
+                }
+                else 
+                {
+                    caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*";
                 }
                 Boolean valida = false;
                 
