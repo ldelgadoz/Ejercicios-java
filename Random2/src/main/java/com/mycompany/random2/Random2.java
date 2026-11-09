@@ -53,23 +53,27 @@ public class Random2 {
                 opcion2 = datos.next();
                 if (opcion2.equals("s"))
                 {
-                    String opcion3 = "";
+                    String opcion3;
                     System.out.println("¿Quieres mayusculas s/n?: ");
+                    opcion3 = datos.next();
                     if (opcion3.equals("s"))
                     {
                         caracteres = caracteres + Mayus;
                     }
                     System.out.println("¿Quieres minusculas s/n?: ");
+                    opcion3 = datos.next();
                     if (opcion3.equals("s"))
                     {
                         caracteres = caracteres + Minus;
                     }
                     System.out.println("¿Quieres numeros s/n?: ");
+                    opcion3 = datos.next();
                     if (opcion3.equals("s"))
                     {
                         caracteres = caracteres + Nums;
                     }
                     System.out.println("¿Quieres Caracteres especiales s/n?: ");
+                    opcion3 = datos.next();
                     if (opcion3.equals("s"))
                     {
                         caracteres = caracteres + carc;
