@@ -44,5 +44,15 @@ public class Arrays3 {
         {
             System.out.println(nombres[i]);
         }
+        
+        //2
+        int[] array2 = new int[20];
+        int num;
+        for (int i = 0; i<array2.length;i++)
+        {
+            System.out.println("Introduce un numero: ");
+            num = datos.nextInt();
+            array2[i] = num;
+        }
     }
 }
