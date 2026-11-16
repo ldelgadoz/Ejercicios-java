@@ -5,6 +5,7 @@
 package com.mycompany.arrays3;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -100,9 +101,32 @@ public class Arrays3 {
         }
         System.out.println("MOSTRAMOS LOS ARRAYS");
         System.out.println("ARRAY 1 = "+Arrays.toString(array3));
-        System.out.println("ARRAY 1 = "+Arrays.toString(array4));
+        System.out.println("ARRAY 2 = "+Arrays.toString(array4));
+        
+        //4
+        
+        Random rnd = new Random();
+        int min = 0;
+        int max = 9;
         
         
+        
+        System.out.println("Cuantas posiciones quieres que tenga tu arreglo?: ");
+        int j = datos.nextInt();
+        int [] arreglo5 = new int[j];
+        for (int i = 0; i < j; i++)
+        {
+            int numeror = rnd.nextInt((max-min) +1) + min;
+            arreglo5[i] = numeror;
+        }
+        System.out.println("VALOR DE CADA POSICION");
+        int suma = 0;
+        for (int i = 0; i<j; i++)
+        {
+            System.out.println(arreglo5[i]);
+            suma += arreglo5[i];
+        }
+        System.out.println("La suma de todos es: "+suma);
         
     }
 }
