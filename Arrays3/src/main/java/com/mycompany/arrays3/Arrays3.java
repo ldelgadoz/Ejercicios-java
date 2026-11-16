@@ -4,6 +4,7 @@
 
 package com.mycompany.arrays3;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -73,5 +74,35 @@ public class Arrays3 {
         {
             System.out.println("El array no es capicua");
         }
+        
+        //3
+        
+       
+        System.out.print("Introduce el tamaño 'n' para ambos arreglos: ");
+        int h = datos.nextInt();
+        int [] array3 = new int [h];
+        int [] array4 = new int [h];
+        
+        for (int i = 0; i<array3.length; i++)
+        {
+            array3[i] = 1;
+            array4[i] = 2;
+        }
+
+        System.out.println("Vamos a cambiar los valores, el primer array contiene 1 y el segundo 2");
+        
+        
+        for (int i = 0; i <h; i++)
+        {
+            int provisional = array3[i];
+            array3[i] = array4[i];
+            array4[i] = provisional;
+        }
+        System.out.println("MOSTRAMOS LOS ARRAYS");
+        System.out.println("ARRAY 1 = "+Arrays.toString(array3));
+        System.out.println("ARRAY 1 = "+Arrays.toString(array4));
+        
+        
+        
     }
 }
