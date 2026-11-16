@@ -54,5 +54,24 @@ public class Arrays3 {
             num = datos.nextInt();
             array2[i] = num;
         }
+        boolean capicua = true;
+        
+        for (int i = 0; i<20/2; i++)
+        {
+            if (array2[i] != array2[(20-1)-i])
+            {
+                capicua = false;
+                break;
+            }
+        }
+        
+        if (capicua)
+        {
+            System.out.println("El array es capicua");
+        }
+        else 
+        {
+            System.out.println("El array no es capicua");
+        }
     }
 }
