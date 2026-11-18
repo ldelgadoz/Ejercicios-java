@@ -26,7 +26,7 @@ public class M2 {
         int contador = 0;
         for (int i = 0; i<m.length;i++){
             for (int j = 0;j<m[i].length;j++){
-                int r = rnd.nextInt(10,1000);
+                int r = rnd.nextInt(10,1001);
                 m[i][j] = r;
                 System.out.print(m[i][j]+"\n");
                 if (m[i][j] == 10){
