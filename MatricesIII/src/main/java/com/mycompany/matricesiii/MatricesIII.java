@@ -77,7 +77,22 @@ public class MatricesIII {
                 }         
             }
             else if (opcion == 5){
+                int ventas = 0;
+                int mejorTienda = 0;
+                String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio"};
                 
+                for (int i=0; i< tiendas.length; i++){
+                    int contador = 0;
+                    for (int j = 0; j< tiendas[i].length;j++){
+                        contador += tiendas[i][j];
+                    }
+                    if (contador > ventas){
+                        ventas = contador;
+                        mejorTienda = i;
+                    }
+                    
+                }
+                        
                 
             }
         }while (opcion != 0);
