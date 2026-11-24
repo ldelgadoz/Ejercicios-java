@@ -17,6 +17,7 @@ public class MatricesIII {
         Scanner datos = new Scanner (System.in);
         Random rnd = new Random();
         int opcion;
+        String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio"};
         int [][] tiendas = new int[4][6];
         do{
             System.out.println("==== VENTAS TRIMESTRALES ===");
@@ -65,7 +66,6 @@ public class MatricesIII {
                 }
             }
             else if (opcion == 4){
-                String [] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"};
                 System.out.println("VENTAS TOTALES POR MES");
                 for (int i = 0; i<tiendas[0].length;i++){
                     int total = 0;
@@ -79,7 +79,6 @@ public class MatricesIII {
             else if (opcion == 5){
                 int ventas = 0;
                 int mejorTienda = 0;
-                String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio"};
                 
                 for (int i=0; i< tiendas.length; i++){
                     int contador = 0;
@@ -92,8 +91,80 @@ public class MatricesIII {
                     }
                     
                 }
+                
+                int menorventas = 0;
+                int peormes = 0;
+                for (int i=0; i<tiendas[0].length;i++){
+                    int sumames = 0;
+                    for (int j = 0; j<tiendas.length;j++){
+                        sumames += tiendas[j][i];
+                        
+                    }
+                     if (i == 0 || sumames <menorventas){
+                         menorventas = sumames;
+                         peormes = i;
+                     }
+                   
+                }
+                System.out.println("MEJOR TIENDA Y PEOR MES");
+                System.out.println("Mejor tienda: Tienda " + (mejorTienda + 1) + " con " + ventas + "$");
+                System.out.println("Peor mes: " + meses[peormes] + " con " + menorventas + "$");
                         
                 
+            }
+            else if (opcion == 6){
+                int ventamax = tiendas[0][0];
+                int ventamin = tiendas[0][0];
+                int tiendaMax = 0, mesMax = 0;
+                int tiendaMin = 0, mesMin = 0;
+
+                for (int i = 0; i < tiendas.length; i++) {
+                    for (int j = 0; j < tiendas[i].length; j++) {
+
+                        if (tiendas[i][j] > ventamax) {
+                            ventamax = tiendas[i][j];
+                            tiendaMax = i;
+                            mesMax = j;
+                        }
+
+                        if (tiendas[i][j] < ventamin) {
+                            ventamin = tiendas[i][j];
+                            tiendaMin = i;
+                            mesMin = j;
+                        }
+
+                    }
+                }
+                System.out.println("VENTA MÁXIMA Y MÍNIMA");
+                System.out.println("Venta máxima: " + ventamax + "$ (Tienda " + (tiendaMax + 1) + " en " + meses[mesMax] + ")");
+                System.out.println("Venta mínima: " + ventamin + "$ (Tienda " + (tiendaMin + 1) + " en " + meses[mesMin] + ")");
+            }
+            else if (opcion == 7) {
+                int sumaTotal = 0;
+                int totalCeldas = tiendas.length * tiendas[0].length; 
+                for (int i = 0; i < tiendas.length; i++) {
+                    for (int j = 0; j < tiendas[i].length; j++) {
+                        sumaTotal += tiendas[i][j];
+                    }
+                }
+                double media = (double) sumaTotal / totalCeldas;
+                int contadorEncimaMedia = 0;
+                for (int i = 0; i < tiendas.length; i++) {
+                    for (int j = 0; j < tiendas[i].length; j++) {
+                        if (tiendas[i][j] > media) {
+                            contadorEncimaMedia++;
+                        }
+                    }
+                }
+                System.out.println("=== MEDIA GENERAL Y CELDAS POR ENCIMA DE LA MEDIA ===");
+                System.out.println("Venta media general: " + media + "$");
+                System.out.println("Celdas que superan la media: " + contadorEncimaMedia);
+            }
+            else if (opcion == 0){
+                System.out.println("Hasta pronto");
+            }
+            else{
+                System.out.println("Eso no es una opción");
             }
         }while (opcion != 0);
     }
